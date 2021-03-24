@@ -34,6 +34,11 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>com.ibm.watson</groupId>
+            <artifactId>ibm-watson</artifactId>
+            <version>9.0.2</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
@@ -62,6 +67,26 @@
             <id>jcenter</id>
             <name>jcenter-bintray</name>
             <url>https://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>bintray</name>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <id>bintray</id>
+            <url>https://dl.bintray.com/deepspeech-ci/org.deepspeech</url>
+        </repository>
+        <repository>
+            <id>alissy</id>
+            <url>https://dl.bintray.com/alissy/org.mozilla.deepspeech</url>
         </repository>
     </repositories>
 </project>

@@ -4,6 +4,7 @@ import com.speechtotextbot.listeners.SpeechToTextListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
@@ -35,12 +36,11 @@ public class SpeechToTextBotApplication {
 		System.out.println("Initialising api");
 		String token = env.getProperty("TOKEN");
 		JDABuilder builder = JDABuilder.createDefault(token);
-		// Disable parts of the cache
-		builder.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
 		// Enable the bulk delete event
 		builder.setBulkDeleteSplittingEnabled(false);
 		// Set activity (like "playing Something")
-		builder.setActivity(Activity.listening("Speech to Texxt"));
+		builder.setActivity(Activity.listening("Speech to Text"));
+		builder.setEnabledIntents(GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.values());
 		builder.addEventListeners(speechToTextListener);
 		System.out.println(token);
 		System.out.println("Initialising listeners");

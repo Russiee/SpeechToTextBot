@@ -44,7 +44,9 @@ public class SpeechToTextListenerImpl extends ListenerAdapter implements SpeechT
                     } else {
                         AudioManager audioManager = messageCreateEvent.getGuild().getAudioManager();
                         audioManager.openAudioConnection(voiceChannelList.get(0));
+                        connectionListener.createSpeechToText(messageCreateEvent.getTextChannel());
                         audioManager.setReceivingHandler(connectionListener);
+                        audioManager.setSendingHandler(connectionListener);
                     }
                 }
             }
