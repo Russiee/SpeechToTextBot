@@ -88,7 +88,6 @@ public class SpeechToTextListenerImpl extends ListenerAdapter implements SpeechT
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        //WindowController windowController = new WindowController(messageCreateEvent.getTextChannel());
 
                         //AudioManager audioManager = messageCreateEvent.getGuild().getAudioManager();
                         //audioManager.openAudioConnection(voiceChannelList.get(0));
@@ -142,7 +141,7 @@ public class SpeechToTextListenerImpl extends ListenerAdapter implements SpeechT
         Thread micThread = new Thread(micrunnable);
         ResponseObserver<StreamingRecognizeResponse> responseObserver = null;
         CredentialsProvider credentialsProvider = FixedCredentialsProvider.create(ServiceAccountCredentials
-                .fromStream(new FileInputStream("/home/pi/SpeechToTextBot/speechtotextbot/src/main/resources/google.json")));
+                .fromStream(new FileInputStream("C:/Users/nikit/SpeechToTextBot/speechtotextbot/src/main/resources/google.json")));
         SpeechSettings settings = SpeechSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
 
         try (SpeechClient client = SpeechClient.create(settings)) {
